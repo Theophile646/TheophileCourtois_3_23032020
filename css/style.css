@@ -1,5 +1,39 @@
-.explore {
-  background-color: black;
+@font-face {
+  font-family: "Shrikhand";
+  src: url("/fonts/Shrikhand-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.ttf") format("ttf");
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+}
+
+h1 h2 h3 h4 {
+  font-family: "Shrikhand", sans-serif;
+}
+
+h1 h2 {
+  font-size: 1.2em;
+}
+
+.logo-header {
+  font-size: 2em;
+  text-align: center;
+}
+
+.location {
+  background-color: grey;
+}
+.location__searchbar {
+  display: flex;
+  justify-content: center;
+}
+
+.how-it-work--list {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=style.css.map */

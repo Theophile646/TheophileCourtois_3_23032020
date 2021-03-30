@@ -1,0 +1,11 @@
+.location {
+    background-color: $background-color;
+    &__searchbar {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.how-it-work--list {
+    list-style-type: none;
+}

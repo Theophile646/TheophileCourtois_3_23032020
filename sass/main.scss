@@ -1,3 +1,16 @@
-.explore {
-    background-color: black;
-}
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";
+@import "./pages/homepage";
+@import "./pages/restaurant1";
+@import "./pages/restaurant2";
+@import "./pages/restaurant3";
+@import "./pages/restaurant4";
