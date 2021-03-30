@@ -1,0 +1,19 @@
+{
+  "name": "p3_ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theophile646/TheophileCourtois_3_23032020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theophile646/TheophileCourtois_3_23032020/issues"
+  },
+  "homepage": "https://github.com/Theophile646/TheophileCourtois_3_23032020#readme"
+}
