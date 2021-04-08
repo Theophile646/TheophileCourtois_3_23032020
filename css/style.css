@@ -109,6 +109,7 @@ footer .fas {
 .explore button {
   margin-top: 10px;
   margin-bottom: 30px;
+  padding: 0 10px 0 10px;
   border: none;
   border-radius: 25px;
   color: white;
@@ -122,25 +123,43 @@ footer .fas {
 .how-it-works {
   padding: 5%;
 }
-.how-it-works--list {
+.how-it-works ol {
+  counter-reset: number;
+  list-style: none;
   padding: 0;
-  list-style-type: none;
 }
-.how-it-works .fas::before {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-.how-it-works li {
+.how-it-works ol li {
+  counter-increment: number;
+  display: flex;
+  align-items: center;
   background-color: #e6e6e6;
   border-radius: 50px;
   margin: 0 0 15px 0;
-  line-height: 45px;
+  padding-left: 15px;
   border-radius: 15px;
-  padding-left: 35px;
   box-shadow: 0px 1px 2px 0px grey;
+  position: relative;
+}
+.how-it-works ol li::before {
+  content: counter(number);
+  position: absolute;
+  left: -0.7rem;
+  border: 3px solid #9356DC;
+  color: white;
+  background-color: #9356DC;
+  border-radius: 50%;
+  width: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.how-it-works ol li :first-child {
+  padding: 0 10px 0 10px;
+  color: grey;
+}
+.how-it-works ol li :last-child {
+  display: inline-block;
+  overflow: hidden;
 }
 
 /* Section restaurants */

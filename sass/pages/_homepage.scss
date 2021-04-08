@@ -61,6 +61,7 @@
     button {
         margin-top: 10px;
         margin-bottom: 30px;
+        padding: 0 10px 0 10px ;
         border: none;
         @include button (25px, white, 2.5em, $secondary-color, $primary-color)
     }
@@ -72,28 +73,48 @@
 .how-it-works{
     padding: $padding-full;
 
-        &--list {
-            padding: 0;
-            list-style-type: none;
-            }
-
-        .fas::before {
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-              }
+        ol {
+            counter-reset: number;
+            list-style: none;
+            padding: 0;      
 
         li {
+            counter-increment: number;
+            display: flex;
+            align-items: center;
             @include background-light;
             border-radius: 50px;
             margin: 0 0 15px 0;
-            line-height: 45px;
+            padding-left: 15px;
             border-radius: 15px;
-            padding-left: 35px;
             box-shadow: $box-shadow;
+            position: relative;
+
+            &::before {
+                content: counter(number);
+                position: absolute;
+                left: -0.7rem;
+                border: 3px solid $primary-color;
+                color: white;
+                background-color: $primary-color;
+                border-radius: 50%;
+                width: 17px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            :first-child {
+                padding: 0 10px 0 10px;
+                color: $background-color;
+            }
+
+            :last-child {
+                display: inline-block;
+                overflow: hidden;
+            }
         }
+    }
 }
 
 
@@ -102,10 +123,7 @@
 .restaurants {
     
     @include background-light;
-    padding: $padding-full;
-
-        &--title{
-        }    
+    padding: $padding-full;  
         
         &--card{
             position: relative;
