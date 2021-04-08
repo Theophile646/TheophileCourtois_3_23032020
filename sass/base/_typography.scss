@@ -15,13 +15,15 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 1em;
+    margin: 0;
+    padding: 0;
 }
 
-h1 h2 h3 h4 {
+h1, h2, h3, h4 {
     font-family: "Shrikhand", sans-serif;
 }
 
-h1 h2 {
+h1, h2 {
     font-size: 1.2em;
 }
 

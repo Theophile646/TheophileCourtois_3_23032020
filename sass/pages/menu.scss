@@ -1,0 +1,119 @@
+@import "../utils/variables";
+
+
+/* Superposition */
+
+.superposition {
+    position: relative;
+}
+
+/* Background Image */
+
+.background-image {
+    width: 100%;
+    position: absolute;
+    
+    img {
+        width: 100%;
+        height: 250px;    
+        object-fit: cover;
+    }
+}
+
+/* Menu */
+
+.menu {
+    @include background-light;
+    border-radius: 50px 50px 0 0;
+    position: relative;
+    z-index: 1;
+    top: 200px;
+    padding: $padding-full;
+
+    h1 {
+        font-style: italic;
+        font-weight: 900;
+        font-size: 2em;
+    }
+
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: 100;
+        font-size: medium;
+
+        /* Menu - Underline */
+        &::after {
+            content: "";
+            display: block;
+            width: 15%;
+            padding-top: 3px;
+            border-bottom: 3px solid $tertiary-color;
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+            padding-right: 15px;
+        }
+    }
+
+    /* Menu - Card starter */
+    &__starter--course {
+        background-color: white;
+        border-radius: 25px;          
+    }
+
+    /* Menu - Card main course */
+    &__main-course--course {
+        background-color: white;
+        border-radius: 25px;
+        padding-left: 5%;
+    }
+
+    /* Menu - Card dessert */
+    &__dessert--course {
+        background-color: white;
+        border-radius: 25px;
+        padding-left: 5%;
+    }
+
+    /* Menu - Order button */
+    &__button {
+    display: flex;
+    justify-content: center;
+
+        button {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            border: none;
+            @include button (25px, white, 2.5em, $secondary-color, $primary-color)
+        }
+    }
+}
+
+    /* Menu - Card display */
+.menu__starter--course, .menu__main-course--course, .menu__dessert--course {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: $padding-full;
+    margin-bottom: 3%; 
+    box-shadow: $box-shadow;
+
+    :first-child {
+        flex-basis: 100%;
+        margin: 0;
+    }
+
+    :nth-child(2) {
+        flex-basis: 75%;
+    }
+}

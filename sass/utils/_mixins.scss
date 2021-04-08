@@ -1,0 +1,22 @@
+@import "../utils/variables";
+
+
+@mixin button ($radius, $text-color, $line-height, $grad1, $grad2) {
+    border-radius: $radius;
+    color: $text-color;
+    line-height: $line-height;
+
+    background: $primary-color;
+    background: linear-gradient($grad1, $grad2);
+    background: -webkit-linear-gradient($grad1, $grad2);
+
+}
+
+
+@mixin background-light {
+    background-color: lighten($background-color, 40%);
+}
+
+@mixin background-dark {
+    background-color: darken($background-color, 25%);
+}

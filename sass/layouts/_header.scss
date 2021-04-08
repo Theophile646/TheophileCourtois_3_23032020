@@ -1,4 +1,20 @@
+@import "../utils/variables";
+
+
 .logo-header {
-    font-size: 2em;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        position: absolute;
+        left: 1em;
+    }
+
+    img {
+        padding: 3%;
+        width: 45%;
+        height: auto;
+    }
 }
+

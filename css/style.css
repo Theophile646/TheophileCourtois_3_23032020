@@ -9,31 +9,295 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1em;
+  margin: 0;
+  padding: 0;
 }
 
-h1 h2 h3 h4 {
+h1, h2, h3, h4 {
   font-family: "Shrikhand", sans-serif;
 }
 
-h1 h2 {
+h1, h2 {
   font-size: 1.2em;
 }
 
 .logo-header {
-  font-size: 2em;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-header i {
+  position: absolute;
+  left: 1em;
+}
+.logo-header img {
+  padding: 3%;
+  width: 45%;
+  height: auto;
 }
 
-.location {
-  background-color: grey;
+/* Footer */
+footer {
+  background-color: #404040;
+  color: white;
+  padding: 5%;
 }
-.location__searchbar {
+footer svg {
+  width: 30%;
+  height: auto;
+}
+footer svg path {
+  fill: white;
+}
+footer ul {
+  padding: 0;
+  list-style-type: none;
+  line-height: 35px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer .fas {
+  padding-right: 2%;
+}
+
+/* Section location */
+.location {
+  background-color: silver;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px;
+}
+.location--searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location--searchbar .fas::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.location--searchbar input {
+  font-size: 0.9em;
+  background-color: silver;
+  border: none;
+  text-align: center;
+}
+.location--searchbar input::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+/* Section Explore */
+.explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #e6e6e6;
+  padding: 5%;
+}
+.explore h2 {
+  margin-bottom: 0;
+}
+.explore button {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  line-height: 2.5em;
+  background: #9356DC;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+}
+
+/* Section HowItWorks */
+.how-it-works {
+  padding: 5%;
+}
+.how-it-works--list {
+  padding: 0;
+  list-style-type: none;
+}
+.how-it-works .fas::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.how-it-works li {
+  background-color: #e6e6e6;
+  border-radius: 50px;
+  margin: 0 0 15px 0;
+  line-height: 45px;
+  border-radius: 15px;
+  padding-left: 35px;
+  box-shadow: 0px 1px 2px 0px grey;
+}
+
+/* Section restaurants */
+.restaurants {
+  background-color: #e6e6e6;
+  padding: 5%;
+}
+.restaurants--card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+.restaurants--image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
+}
+.restaurants--new {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  color: #278870;
+  background-color: #99E2D0;
+  padding: 2%;
+  border-radius: 5px;
+}
+.restaurants--details {
+  background-color: white;
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+.restaurants--details :first-child {
+  margin-bottom: 0;
+  order: 1;
+}
+.restaurants--details :nth-child(2) {
+  flex-basis: 100%;
+  margin-top: 0;
+  order: 3;
+}
+.restaurants--details :last-child {
+  margin: 0;
+  order: 2;
+  align-self: flex-end;
+}
+
+/* Superposition */
+.superposition {
+  position: relative;
+}
+
+/* Background Image */
+.background-image {
+  width: 100%;
+  position: absolute;
+}
+.background-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Menu */
+.menu {
+  background-color: #e6e6e6;
+  border-radius: 50px 50px 0 0;
+  position: relative;
+  z-index: 1;
+  top: 200px;
+  padding: 5%;
+  /* Menu - Card starter */
+  /* Menu - Card main course */
+  /* Menu - Card dessert */
+  /* Menu - Order button */
+}
+.menu h1 {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 2em;
+}
+.menu h2 {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: medium;
+  /* Menu - Underline */
+}
+.menu h2::after {
+  content: "";
+  display: block;
+  width: 15%;
+  padding-top: 3px;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__title i {
+  padding-right: 15px;
+}
+.menu__starter--course {
+  background-color: white;
+  border-radius: 25px;
+}
+.menu__main-course--course {
+  background-color: white;
+  border-radius: 25px;
+  padding-left: 5%;
+}
+.menu__dessert--course {
+  background-color: white;
+  border-radius: 25px;
+  padding-left: 5%;
+}
+.menu__button {
   display: flex;
   justify-content: center;
 }
+.menu__button button {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  line-height: 2.5em;
+  background: #9356DC;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+}
 
-.how-it-work--list {
-  list-style-type: none;
+/* Menu - Card display */
+.menu__starter--course, .menu__main-course--course, .menu__dessert--course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5%;
+  margin-bottom: 3%;
+  box-shadow: 0px 1px 2px 0px grey;
+}
+.menu__starter--course :first-child, .menu__main-course--course :first-child, .menu__dessert--course :first-child {
+  flex-basis: 100%;
+  margin: 0;
+}
+.menu__starter--course :nth-child(2), .menu__main-course--course :nth-child(2), .menu__dessert--course :nth-child(2) {
+  flex-basis: 75%;
 }
 
 /*# sourceMappingURL=style.css.map */
