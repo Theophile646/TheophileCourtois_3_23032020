@@ -7,7 +7,15 @@
         <title>OhMyFood</title>
     </head>
 
+
     <body>
+            <!-- Loader -->
+            <div class="loader-wrapper">
+                <div class="loader">
+                    <div class="ball"></div>
+                </div>
+            </div> 
+
 
             <!-- Header -->
             <header>
@@ -15,7 +23,6 @@
                     <img src="images/logo/ohmyfood@2x.svg" alt="logo_ohmyfood">
                 </div>
             </header>
-
 
 
                 <!-- Location -->
@@ -30,7 +37,7 @@
             <!-- Section 1 Explore -->
             <section class="explore">
                 
-                    <h2>Réserver le menu qui vous convient</h2>
+                    <h2>Réservez le menu qui vous convient</h2>
 
                     <p>Découvrez des restaurants d'exception, séléctionés par nos soins.</p>
 
@@ -70,7 +77,10 @@
                     <div class="restaurants--details">
                         <h3>La palette du goût</h3>
                         <p>Ménilmontant</p>
-                        <i class="far fa-heart"></i>
+                        <div class="like-button">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                        </div>
                     </div>
                 </div>
 
@@ -80,8 +90,10 @@
                     <div class="restaurants--details">
                         <h3>La note enchantée</h3>
                         <p>Charonne</p>
-                        <i class="far fa-heart"></i>
-                    </div>
+                        <div class="like-button">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                        </div>                    </div>
                 </div>
 
                 <div class="restaurants--card">
@@ -89,8 +101,10 @@
                     <div class="restaurants--details">
                         <h3>À la française</h3>
                         <p>Cité Rouge</p>
-                        <i class="far fa-heart"></i>
-                    </div>
+                        <div class="like-button">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                        </div>                    </div>
                 </div>
 
                 <div class="restaurants--card">
@@ -98,8 +112,10 @@
                     <div class="restaurants--details">
                         <h3>Le délice des sens</h3>
                         <p>Folie-Méricourt</p>
-                        <i class="far fa-heart"></i>
-                    </div>
+                        <div class="like-button">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                        </div>                    </div>
                 </div>
 
             </section>
@@ -121,8 +137,18 @@
 
                 <div>
                     <ul>
-                        <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-                        <li><a href="#"><i class="fas fa-handshake"></i>Devenir partenaire</a></li>
+                        <li>
+                            <a href="#">
+                                <div><i class="fas fa-utensils fa-fw"></i></div>
+                                <p>Proposer un restaurant</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div><i class="fas fa-handshake fa-fw"></i></div>
+                                <p>Devenir partenaire</p>
+                            </a>
+                        </li>
                         <li><a href="#">Mentions légales</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
@@ -8,7 +8,6 @@
     </head>
 
     <body>
-
             <!-- Header -->
             <header>
                 <div class="logo-header">
@@ -18,43 +17,58 @@
 
             </header>
 
-            <!-- Superposition Backround Image & Menu -->
-
-
-            <!-- Background Image -->
-            <section class="background-image">
-                <div>
-                    <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="restaurant_a_la_francaise"/>
-                </div>
-
-            </section>
-
             <!-- Menu -->
-            <section class="menu">
+            <section id="menu-restaurant-1">
+
+                <div class="menu">
+
                     <div class="menu__title">
                         <h1>À la française</h1>
-                        <i class="far fa-heart"></i>
-                    </div>
+                        <div class="like-button">
+                            <i class="far fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                        </div>                    </div>
 
                     <div class="menu__starter">
                         <h2>Entrées</h2>
 
-                        <div class="menu__starter--course">
-                            <h3>Tartare de poulpe acidulé</h3>
-                            <p>Aux zests d'orange</p>
-                            <p>25€</p>
+                        <div class="card">
+                            <div class="card__content">
+                                <h3>Tartare de poulpe acidulé</h3>
+                                <p>Aux zests d'orange</p>
+                                <p>25€</p>
+                            </div>
+                            <div class="card__overlay">
+                                <div class="card__overlay--ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="menu__starter--course">
-                            <h3>Velouté de legumes d'antan</h3>
-                            <p>Carottes, panais, topinambour</p>
-                            <p>35€</p>
+                            <div class="menu__starter--content">
+                                <h3>Velouté de legumes d'antan</h3>
+                                <p>Carottes, panais, topinambour</p>
+                                <p>35€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="menu__starter--course">
-                            <h3>Soupe à l'oignon</h3>
-                            <p>Revisitée</p>
-                            <p>20€</p>
+                            <div class="menu__starter--content">
+                                <h3>Soupe à l'oignon</h3>
+                                <p>Revisitée</p>
+                                <p>20€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>  
                     
@@ -62,21 +76,42 @@
                         <h2>Plats</h2>
 
                         <div class="menu__main-course--course">
-                            <h3>Coquilles Saint-Jacques</h3>
-                            <p>Accompagnées d'une purée de panais</p>
-                            <p>40€</p>
+                            <div class="menu__main-course--content">
+                                <h3>Coquilles Saint-Jacques</h3>
+                                <p>Accompagnées d'une purée de panais</p>
+                                <p>40€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="menu__main-course--course">
-                            <h3>Magret de canard</h3>
-                            <p>Et parmentier de pomme de terres</p>
-                            <p>35€</p>
+                            <div class="menu__main-course--content">
+                                <h3>Magret de canard</h3>
+                                <p>Et parmentier de pomme de terres</p>
+                                <p>35€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="menu__main-course--course">
-                            <h3>Pigeonnau d'Ille-et-Vilaine</h3>
-                            <p>Sur son lit de gnocchis aux légumes</p>
-                            <p>44€</p>
+                            <div class="menu__main-course--content">
+                                <h3>Pigeonnau d'Ille-et-Vilaine</h3>
+                                <p>Sur son lit de gnocchis aux légumes</p>
+                                <p>44€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -84,27 +119,50 @@
                         <h2>Desserts</h2>
 
                         <div class="menu__dessert--course">
-                            <h3>Pétales de violettes glacés</h3>
-                            <p>Et purée de noisettes</p>
-                            <p>18€</p>
+                            <div class="menu__dessert--content">
+                                <h3>Pétales de violettes glacés</h3>
+                                <p>Et purée de noisettes</p>
+                                <p>18€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="menu__dessert--course">
-                            <h3>Fondant au chocolat</h3>
-                            <p>Revisité</p>
-                            <p>22€</p>
+                            <div class="menu__dessert--content">
+                                <h3>Fondant au chocolat</h3>
+                                <p>Revisité</p>
+                                <p>22€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="menu__dessert--course">
-                            <h3>Millefeuille croustillant</h3>
-                            <p>Myrtille et pâte d'amande</p>
-                            <p>23€</p>
+                            <div class="menu__dessert--content">
+                                <h3>Millefeuille croustillant</h3>
+                                <p>Myrtille et pâte d'amande</p>
+                                <p>23€</p>
+                            </div>
+                            <div class="menu__starter--overlay">
+                                <div class="ordered">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="menu__button">
                         <button>Commander</button>
                     </div>
+                
+                </div>
 
             </section>
 
@@ -126,15 +184,13 @@
 
                 <div>
                     <ul>
-                        <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-                        <li><a href="#"><i class="fas fa-handshake"></i>Devenir partenaire</a></li>
+                        <li><a href="#"><i class="fas fa-utensils fa-fw"></i>Proposer un restaurant</a></li>
+                        <li><a href="#"><i class="fas fa-handshake fa-fw"></i>Devenir partenaire</a></li>
                         <li><a href="#">Mentions légales</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
             </footer>
-
         
-    
     </body>
 </html>

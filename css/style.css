@@ -52,14 +52,27 @@ footer svg path {
 footer ul {
   padding: 0;
   list-style-type: none;
-  line-height: 35px;
 }
-footer a {
+footer li {
   text-decoration: none;
   color: white;
+  line-height: 35px;
 }
-footer .fas {
-  padding-right: 2%;
+footer li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+footer li .fas {
+  color: white;
+  padding-right: 10px;
+}
+footer li p {
+  display: inline;
+  overflow: hidden;
+  margin: 0;
 }
 
 /* Section location */
@@ -114,9 +127,14 @@ footer .fas {
   border-radius: 25px;
   color: white;
   line-height: 2.5em;
+  box-shadow: 0px 1px 2px 0px grey;
   background: #9356DC;
   background: linear-gradient(#FF79DA, #9356DC);
   background: -webkit-linear-gradient(#FF79DA, #9356DC);
+}
+.explore button:hover {
+  opacity: 0.9;
+  box-shadow: 0px 3px 5px 0px #9356DC;
 }
 
 /* Section HowItWorks */
@@ -144,7 +162,7 @@ footer .fas {
   content: counter(number);
   position: absolute;
   left: -0.7rem;
-  border: 3px solid #9356DC;
+  padding: 3px;
   color: white;
   background-color: #9356DC;
   border-radius: 50%;
@@ -214,39 +232,126 @@ footer .fas {
   align-self: flex-end;
 }
 
-/* Superposition */
-.superposition {
+/*Animation - like */
+.like-button {
   position: relative;
 }
-
-/* Background Image */
-.background-image {
-  width: 100%;
-  position: absolute;
+.like-button :last-child {
+  display: none;
 }
-.background-image img {
+.like-button:hover :first-child {
+  display: none;
+}
+.like-button:hover :last-child {
+  display: inline-block;
+  color: #9356DC;
+  animation: like 2s both;
+}
+
+@keyframes like {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*Animation - loading spinner */
+.loader-wrapper {
+  background-color: #FF79DA;
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  animation: loader 4s ease-in-out forwards;
+}
+
+.loader {
+  width: 500px;
+  height: 150px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.loader .ball {
+  width: 100px;
+  height: 100px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  display: inline-block;
+  animation: motion 4s ease-in-out forwards;
+}
+
+@keyframes motion {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    transform: translateX(-200px) scale(0.3);
+  }
+  50% {
+    transform: translateX(0) scale(1);
+  }
+  75% {
+    transform: translateX(200px) scale(0.3);
+  }
+  100% {
+    transform: translateX(0) scale(0);
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  1%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Background Image */
+#menu-restaurant-1 {
+  background-image: url(./../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-size: contain;
+  background-repeat: repeat;
+  padding-top: 40%;
+}
+
+#menu-restaurant-2 {
+  background-image: url(./../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-size: contain;
+  background-repeat: repeat;
+  padding-top: 40%;
+}
+
+#menu-restaurant-3 {
+  background-image: url(./../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-size: contain;
+  background-repeat: repeat;
+  padding-top: 40%;
+}
+
+#menu-restaurant-4 {
+  background-image: url(./../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  background-size: contain;
+  background-repeat: repeat;
+  padding-top: 40%;
 }
 
 /* Menu */
 .menu {
   background-color: #e6e6e6;
   border-radius: 50px 50px 0 0;
-  position: relative;
-  z-index: 1;
-  top: 200px;
   padding: 5%;
-  /* Menu - Card starter */
-  /* Menu - Card main course */
-  /* Menu - Card dessert */
-  /* Menu - Order button */
 }
 .menu h1 {
   font-style: italic;
   font-weight: 900;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .menu h2 {
   text-transform: uppercase;
@@ -269,20 +374,6 @@ footer .fas {
 .menu__title i {
   padding-right: 15px;
 }
-.menu__starter--course {
-  background-color: white;
-  border-radius: 25px;
-}
-.menu__main-course--course {
-  background-color: white;
-  border-radius: 25px;
-  padding-left: 5%;
-}
-.menu__dessert--course {
-  background-color: white;
-  border-radius: 25px;
-  padding-left: 5%;
-}
 .menu__button {
   display: flex;
   justify-content: center;
@@ -297,26 +388,123 @@ footer .fas {
   border-radius: 25px;
   color: white;
   line-height: 2.5em;
+  box-shadow: 0px 1px 2px 0px grey;
   background: #9356DC;
   background: linear-gradient(#FF79DA, #9356DC);
   background: -webkit-linear-gradient(#FF79DA, #9356DC);
 }
+.menu__button button:hover {
+  opacity: 0.9;
+  box-shadow: 0px 3px 5px 0px #9356DC;
+}
 
-/* Menu - Card display */
+/* Menu - Cards*/
 .menu__starter--course, .menu__main-course--course, .menu__dessert--course {
+  background-color: white;
+  border-radius: 25px;
+  position: relative;
+  transition: width 5s linear;
+}
+.menu__starter--course:hover .menu__starter--overlay, .menu__main-course--course:hover .menu__starter--overlay, .menu__dessert--course:hover .menu__starter--overlay {
+  transform: scale(1);
+}
+.menu__starter--course:hover .menu__starter--overlay .ordered, .menu__main-course--course:hover .menu__starter--overlay .ordered, .menu__dessert--course:hover .menu__starter--overlay .ordered {
+  animation: rotate 500ms linear;
+}
+.menu__starter--course:hover .menu__starter--content, .menu__main-course--course:hover .menu__starter--content, .menu__dessert--course:hover .menu__starter--content {
+  width: 80%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+/* Menu - Card content */
+.menu__starter--content, .menu__main-course--content, .menu__dessert--content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 5%;
-  margin-bottom: 3%;
-  box-shadow: 0px 1px 2px 0px grey;
+  padding: 8px;
+  transform-origin: left;
+  transition: fadein 1s ease-in-out;
+  transition: width 5s linear;
 }
-.menu__starter--course :first-child, .menu__main-course--course :first-child, .menu__dessert--course :first-child {
+.menu__starter--content :nth-child(1), .menu__main-course--content :nth-child(1), .menu__dessert--content :nth-child(1) {
   flex-basis: 100%;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu__starter--course :nth-child(2), .menu__main-course--course :nth-child(2), .menu__dessert--course :nth-child(2) {
+.menu__starter--content :nth-child(2), .menu__main-course--content :nth-child(2), .menu__dessert--content :nth-child(2) {
   flex-basis: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Menu - Overlay */
+.menu__starter--overlay {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  background-color: #99E2D0;
+  top: 0;
+  right: 0;
+  border-radius: 0 25px 25px 0;
+  transform-origin: right;
+  transform: scale(0, 1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__starter--overlay .ordered {
+  color: white;
+}
+
+/*Animation - fadein menu */
+.menu__starter :nth-child(2) {
+  animation: fadein 1s ease-in-out backwards;
+}
+.menu__starter :nth-child(3) {
+  animation: fadein 1s 1s ease-in-out backwards;
+}
+.menu__starter :nth-child(4) {
+  animation: fadein 1s 2s ease-in-out backwards;
+}
+
+.menu__main-course :nth-child(2) {
+  animation: fadein 1s ease-in-out backwards;
+}
+.menu__main-course :nth-child(3) {
+  animation: fadein 1s 1s ease-in-out backwards;
+}
+.menu__main-course :nth-child(4) {
+  animation: fadein 1s 2s ease-in-out backwards;
+}
+
+.menu__dessert :nth-child(2) {
+  animation: fadein 1s ease-in-out backwards;
+}
+.menu__dessert :nth-child(3) {
+  animation: fadein 1s 1s ease-in-out backwards;
+}
+.menu__dessert :nth-child(4) {
+  animation: fadein 1s 2s ease-in-out backwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

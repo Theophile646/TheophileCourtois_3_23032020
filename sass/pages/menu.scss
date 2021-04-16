@@ -1,39 +1,41 @@
 @import "../utils/variables";
+@import "../utils/mixins";
 
 
-/* Superposition */
-
-.superposition {
-    position: relative;
-}
 
 /* Background Image */
-
-.background-image {
-    width: 100%;
-    position: absolute;
-    
-    img {
-        width: 100%;
-        height: 250px;    
-        object-fit: cover;
-    }
+#menu-restaurant-1 {
+    background-image: url(./../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+    @include background-image
 }
+
+#menu-restaurant-2 {
+    background-image: url(./../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+    @include background-image
+}
+
+#menu-restaurant-3 {
+    background-image: url(./../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    @include background-image
+}
+
+#menu-restaurant-4 {
+    background-image: url(./../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+    @include background-image
+}
+
 
 /* Menu */
 
 .menu {
     @include background-light;
     border-radius: 50px 50px 0 0;
-    position: relative;
-    z-index: 1;
-    top: 200px;
     padding: $padding-full;
 
     h1 {
         font-style: italic;
         font-weight: 900;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
 
@@ -57,63 +59,178 @@
         justify-content: space-between;
         align-items: center;
 
-        i {
+            i {
             padding-right: 15px;
         }
     }
 
-    /* Menu - Card starter */
-    &__starter--course {
-        background-color: white;
-        border-radius: 25px;          
-    }
-
-    /* Menu - Card main course */
-    &__main-course--course {
-        background-color: white;
-        border-radius: 25px;
-        padding-left: 5%;
-    }
-
-    /* Menu - Card dessert */
-    &__dessert--course {
-        background-color: white;
-        border-radius: 25px;
-        padding-left: 5%;
-    }
-
-    /* Menu - Order button */
     &__button {
-    display: flex;
-    justify-content: center;
-
-        button {
-            display: flex;
-            justify-content: center;
-            width: 50%;
-            margin-top: 10px;
-            margin-bottom: 30px;
-            border: none;
-            @include button (25px, white, 2.5em, $secondary-color, $primary-color)
-        }
+        display: flex;
+        justify-content: center;
+    
+            button {
+                display: flex;
+                justify-content: center;
+                width: 50%;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                border: none;
+                @include button (25px, white, 2.5em, $secondary-color, $primary-color);
+    
+    
+                &:hover {
+                    @include main-button--hover;
+                }
+    
+            }
+    
     }
 }
 
-    /* Menu - Card display */
+    /* Menu - Cards*/
 .menu__starter--course, .menu__main-course--course, .menu__dessert--course {
+        background-color: white;
+        border-radius: 25px; 
+        position: relative; 
+        transition: width 5s linear;
+
+
+        &:hover{
+
+            .menu__starter--overlay {
+                transform: scale(1);    
+                
+                .ordered {
+                    animation: rotate 500ms linear;
+                }
+            }
+        
+            .menu__starter--content{
+                width: 80%;                              
+            }
+        }
+    }
+
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(180deg);
+        }
+    }
+
+
+
+    /* Menu - Card content */
+.menu__starter--content, .menu__main-course--content, .menu__dessert--content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: $padding-full;
-    margin-bottom: 3%; 
-    box-shadow: $box-shadow;
+    padding: 8px;
+    transform-origin: left;
+    transition: fadein 1s ease-in-out;
+    transition: width 5s linear;
 
-    :first-child {
+
+
+
+    :nth-child(1) {
         flex-basis: 100%;
         margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     :nth-child(2) {
         flex-basis: 75%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        }
+
+}
+
+    /* Menu - Overlay */
+
+.menu__starter--overlay {
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    background-color: $tertiary-color;
+    top: 0;
+    right: 0;
+    border-radius: 0 25px 25px 0;
+    transform-origin: right;
+    transform: scale(0, 1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ordered {
+        color: white;
+        }
+
+}
+
+
+
+
+
+/*Animation - fadein menu */
+.menu__starter {
+
+    :nth-child(2) {
+        animation: fadein 1s ease-in-out backwards;
+    }
+
+    :nth-child(3) {
+        animation: fadein 1s 1s ease-in-out backwards;
+    }
+
+    :nth-child(4) {        
+        animation: fadein 1s 2s ease-in-out backwards;
+    }
+}
+
+.menu__main-course {
+
+    :nth-child(2) {
+        animation: fadein 1s ease-in-out backwards;
+    }
+
+    :nth-child(3) {
+        animation: fadein 1s 1s ease-in-out backwards;
+    }
+
+    :nth-child(4) {        
+        animation: fadein 1s 2s ease-in-out backwards;
+    }
+}
+
+.menu__dessert {
+
+    :nth-child(2) {
+        animation: fadein 1s ease-in-out backwards;
+    }
+
+    :nth-child(3) {
+        animation: fadein 1s 1s ease-in-out backwards;
+    }
+
+    :nth-child(4) {        
+        animation: fadein 1s 2s ease-in-out backwards;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
