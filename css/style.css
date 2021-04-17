@@ -12,6 +12,10 @@ body {
   margin: 0;
   padding: 0;
 }
+body a {
+  text-decoration: none;
+  color: black;
+}
 
 h1, h2, h3, h4 {
   font-family: "Shrikhand", sans-serif;
@@ -74,6 +78,9 @@ footer li p {
   overflow: hidden;
   margin: 0;
 }
+footer li:hover {
+  text-decoration: underline;
+}
 
 /* Section location */
 .location {
@@ -92,9 +99,6 @@ footer li p {
 .location--searchbar .fas::before {
   display: inline-block;
   font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
 }
 .location--searchbar input {
   font-size: 0.9em;
@@ -130,7 +134,7 @@ footer li p {
   box-shadow: 0px 1px 2px 0px grey;
   background: #9356DC;
   background: linear-gradient(#FF79DA, #9356DC);
-  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  transition: box-shadow 1s, color 1s;
 }
 .explore button:hover {
   opacity: 0.9;
@@ -140,6 +144,14 @@ footer li p {
 /* Section HowItWorks */
 .how-it-works {
   padding: 5%;
+}
+@media (min-width: 992px) {
+  .how-it-works {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin: auto;
+  }
 }
 .how-it-works ol {
   counter-reset: number;
@@ -157,6 +169,7 @@ footer li p {
   border-radius: 15px;
   box-shadow: 0px 1px 2px 0px grey;
   position: relative;
+  transition: background-color 1s, color 1s;
 }
 .how-it-works ol li::before {
   content: counter(number);
@@ -179,11 +192,30 @@ footer li p {
   display: inline-block;
   overflow: hidden;
 }
+.how-it-works ol li:hover {
+  background-color: #e4d5f6;
+}
+.how-it-works ol li:hover :first-child {
+  color: #9356DC;
+}
 
 /* Section restaurants */
 .restaurants {
   background-color: #e6e6e6;
   padding: 5%;
+}
+@media (min-width: 992px) {
+  .restaurants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .restaurants a {
+    flex-basis: 45%;
+  }
+  .restaurants--title {
+    flex-basis: 95%;
+  }
 }
 .restaurants--card {
   position: relative;
@@ -192,6 +224,11 @@ footer li p {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 3%;
+  transition: box-shadow 200ms;
+}
+.restaurants--card:hover {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 25px;
 }
 .restaurants--image {
   width: 100%;
@@ -315,30 +352,31 @@ footer li p {
 }
 /* Background Image */
 #menu-restaurant-1 {
-  background-image: url(./../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-image: url(./../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
   background-size: contain;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   padding-top: 40%;
 }
 
 #menu-restaurant-2 {
   background-image: url(./../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
   background-size: contain;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   padding-top: 40%;
+  background-size: cover;
 }
 
 #menu-restaurant-3 {
-  background-image: url(./../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-image: url(./../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
   background-size: contain;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   padding-top: 40%;
 }
 
 #menu-restaurant-4 {
   background-image: url(./../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
   background-size: contain;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   padding-top: 40%;
 }
 
@@ -347,6 +385,29 @@ footer li p {
   background-color: #e6e6e6;
   border-radius: 50px 50px 0 0;
   padding: 5%;
+}
+@media (min-width: 992px) {
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+  }
+  .menu :nth-child(1) {
+    grid-area: 1/1/2/4;
+  }
+  .menu :nth-child(2) {
+    grid-area: 2/1/3/2;
+  }
+  .menu :nth-child(3) {
+    grid-area: 2/2/3/3;
+  }
+  .menu :nth-child(4) {
+    grid-area: 2/3/3/4;
+  }
+  .menu :nth-child(5) {
+    grid-area: 3/2/4/3;
+  }
 }
 .menu h1 {
   font-style: italic;
@@ -362,7 +423,8 @@ footer li p {
 .menu h2::after {
   content: "";
   display: block;
-  width: 15%;
+  width: 40px;
+  position: absolute;
   padding-top: 3px;
   border-bottom: 3px solid #99E2D0;
 }
@@ -391,7 +453,7 @@ footer li p {
   box-shadow: 0px 1px 2px 0px grey;
   background: #9356DC;
   background: linear-gradient(#FF79DA, #9356DC);
-  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  transition: box-shadow 1s, color 1s;
 }
 .menu__button button:hover {
   opacity: 0.9;
@@ -399,22 +461,35 @@ footer li p {
 }
 
 /* Menu - Cards*/
-.menu__starter--course, .menu__main-course--course, .menu__dessert--course {
+.card {
   background-color: white;
   border-radius: 25px;
+  margin-bottom: 3%;
   position: relative;
-  transition: width 5s linear;
 }
-.menu__starter--course:hover .menu__starter--overlay, .menu__main-course--course:hover .menu__starter--overlay, .menu__dessert--course:hover .menu__starter--overlay {
+@media (min-width: 762px) {
+  .card {
+    margin-bottom: 5%;
+  }
+}
+.card:hover .card__overlay {
   transform: scale(1);
 }
-.menu__starter--course:hover .menu__starter--overlay .ordered, .menu__main-course--course:hover .menu__starter--overlay .ordered, .menu__dessert--course:hover .menu__starter--overlay .ordered {
-  animation: rotate 500ms linear;
+.card:hover .card__overlay--ordered {
+  animation: rotate 500ms 800ms linear;
 }
-.menu__starter--course:hover .menu__starter--content, .menu__main-course--course:hover .menu__starter--content, .menu__dessert--course:hover .menu__starter--content {
-  width: 80%;
+.card:hover .card__content {
+  animation: width-content 2s forwards;
 }
 
+@keyframes width-content {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 80%;
+  }
+}
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -424,23 +499,20 @@ footer li p {
   }
 }
 /* Menu - Card content */
-.menu__starter--content, .menu__main-course--content, .menu__dessert--content {
+.card__content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 8px;
-  transform-origin: left;
-  transition: fadein 1s ease-in-out;
-  transition: width 5s linear;
+  padding: 10px;
 }
-.menu__starter--content :nth-child(1), .menu__main-course--content :nth-child(1), .menu__dessert--content :nth-child(1) {
+.card__content :nth-child(1) {
   flex-basis: 100%;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu__starter--content :nth-child(2), .menu__main-course--content :nth-child(2), .menu__dessert--content :nth-child(2) {
+.card__content :nth-child(2) {
   flex-basis: 75%;
   white-space: nowrap;
   overflow: hidden;
@@ -448,7 +520,7 @@ footer li p {
 }
 
 /* Menu - Overlay */
-.menu__starter--overlay {
+.card__overlay {
   position: absolute;
   height: 100%;
   width: 15%;
@@ -462,40 +534,22 @@ footer li p {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 2s 200ms;
 }
-.menu__starter--overlay .ordered {
+.card__overlay--ordered {
   color: white;
+  font-size: 1.5em;
 }
 
 /*Animation - fadein menu */
-.menu__starter :nth-child(2) {
-  animation: fadein 1s ease-in-out backwards;
+.menu__starter :nth-child(2), .menu__main-course :nth-child(2), .menu__dessert :nth-child(2) {
+  animation: fadein 750ms ease-in-out backwards;
 }
-.menu__starter :nth-child(3) {
-  animation: fadein 1s 1s ease-in-out backwards;
+.menu__starter :nth-child(3), .menu__main-course :nth-child(3), .menu__dessert :nth-child(3) {
+  animation: fadein 750ms 750ms ease-in-out backwards;
 }
-.menu__starter :nth-child(4) {
-  animation: fadein 1s 2s ease-in-out backwards;
-}
-
-.menu__main-course :nth-child(2) {
-  animation: fadein 1s ease-in-out backwards;
-}
-.menu__main-course :nth-child(3) {
-  animation: fadein 1s 1s ease-in-out backwards;
-}
-.menu__main-course :nth-child(4) {
-  animation: fadein 1s 2s ease-in-out backwards;
-}
-
-.menu__dessert :nth-child(2) {
-  animation: fadein 1s ease-in-out backwards;
-}
-.menu__dessert :nth-child(3) {
-  animation: fadein 1s 1s ease-in-out backwards;
-}
-.menu__dessert :nth-child(4) {
-  animation: fadein 1s 2s ease-in-out backwards;
+.menu__starter :nth-child(4), .menu__main-course :nth-child(4), .menu__dessert :nth-child(4) {
+  animation: fadein 750ms 1500ms ease-in-out backwards;
 }
 
 @keyframes fadein {

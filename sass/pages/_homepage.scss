@@ -21,9 +21,6 @@
         .fas::before {
             display: inline-block;
             font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
           }
     
           input {
@@ -64,6 +61,7 @@
         padding: 0 10px 0 10px ;
         border: none;
         @include button (25px, white, 2.5em, $secondary-color, $primary-color);
+        transition: box-shadow 1s, color 1s;
 
         &:hover {
             @include main-button--hover;
@@ -76,6 +74,13 @@
 
 .how-it-works{
     padding: $padding-full;
+
+    @media (min-width:992px) {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        margin: auto;
+    }
 
         ol {
             counter-reset: number;
@@ -93,6 +98,7 @@
             border-radius: 15px;
             box-shadow: $box-shadow;
             position: relative;
+            transition: background-color 1s, color 1s;
 
             &::before {
                 content: counter(number);
@@ -117,6 +123,14 @@
                 display: inline-block;
                 overflow: hidden;
             }
+
+            &:hover {
+                background-color: lighten( $primary-color, 30%);
+
+                :first-child {
+                    color: $primary-color;
+                }
+            }
         }
     }
 }
@@ -127,7 +141,23 @@
 .restaurants {
     
     @include background-light;
-    padding: $padding-full;  
+    padding: $padding-full;
+
+    @media (min-width:992px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        a {
+            flex-basis: 45%;
+        }
+        
+        &--title {
+            flex-basis: 95%;
+        }
+        
+    }
+
         
         &--card{
             position: relative;
@@ -136,6 +166,12 @@
             flex-wrap: wrap;
             justify-content: space-between;
             margin-bottom: 3%;
+            transition: box-shadow 200ms;
+
+            &:hover {
+                box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+                border-radius: 25px;
+            }
            
 
         }
@@ -184,6 +220,8 @@
                 }              
         }
 
+
+        
         
 
         
