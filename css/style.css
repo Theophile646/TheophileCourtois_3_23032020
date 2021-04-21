@@ -46,8 +46,16 @@ footer {
   color: white;
   padding: 5%;
 }
+@media (min-width: 992px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 footer svg {
-  width: 30%;
+  min-width: 200px;
   height: auto;
 }
 footer svg path {
@@ -465,7 +473,8 @@ footer li:hover {
   background-color: white;
   border-radius: 25px;
   margin-bottom: 3%;
-  position: relative;
+  overflow: hidden;
+  display: flex;
 }
 @media (min-width: 762px) {
   .card {
@@ -473,13 +482,10 @@ footer li:hover {
   }
 }
 .card:hover .card__overlay {
-  transform: scale(1);
+  margin-right: 0;
 }
 .card:hover .card__overlay--ordered {
-  animation: rotate 500ms 800ms linear;
-}
-.card:hover .card__content {
-  animation: width-content 2s forwards;
+  animation: rotate 250ms 250ms linear;
 }
 
 @keyframes width-content {
@@ -487,7 +493,7 @@ footer li:hover {
     width: 100%;
   }
   100% {
-    width: 80%;
+    width: 83%;
   }
 }
 @keyframes rotate {
@@ -504,6 +510,7 @@ footer li:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px;
+  flex: 1;
 }
 .card__content :nth-child(1) {
   flex-basis: 100%;
@@ -521,20 +528,15 @@ footer li:hover {
 
 /* Menu - Overlay */
 .card__overlay {
-  position: absolute;
-  height: 100%;
   width: 15%;
   background-color: #99E2D0;
-  top: 0;
-  right: 0;
   border-radius: 0 25px 25px 0;
-  transform-origin: right;
-  transform: scale(0, 1);
+  margin-right: -15%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 2s 200ms;
+  transition: margin-right 500ms;
 }
 .card__overlay--ordered {
   color: white;
