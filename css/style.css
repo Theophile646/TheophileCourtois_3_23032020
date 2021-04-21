@@ -308,7 +308,7 @@ footer li:hover {
   height: 100%;
   z-index: 100;
   position: fixed;
-  animation: loader 4s ease-in-out forwards;
+  animation: loader 3s ease-in-out forwards, disapear 0.1s 3s forwards;
 }
 
 .loader {
@@ -356,6 +356,14 @@ footer li:hover {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes disapear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }
 /* Background Image */
@@ -475,6 +483,7 @@ footer li:hover {
   margin-bottom: 3%;
   overflow: hidden;
   display: flex;
+  cursor: pointer;
 }
 @media (min-width: 762px) {
   .card {
