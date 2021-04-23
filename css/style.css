@@ -147,6 +147,7 @@ footer li:hover {
 .explore button:hover {
   opacity: 0.9;
   box-shadow: 0px 3px 5px 0px #9356DC;
+  cursor: pointer;
 }
 
 /* Section HowItWorks */
@@ -202,6 +203,7 @@ footer li:hover {
 }
 .how-it-works ol li:hover {
   background-color: #e4d5f6;
+  cursor: pointer;
 }
 .how-it-works ol li:hover :first-child {
   color: #9356DC;
@@ -291,6 +293,7 @@ footer li:hover {
   display: inline-block;
   color: #9356DC;
   animation: like 2s both;
+  cursor: pointer;
 }
 
 @keyframes like {
@@ -474,6 +477,7 @@ footer li:hover {
 .menu__button button:hover {
   opacity: 0.9;
   box-shadow: 0px 3px 5px 0px #9356DC;
+  cursor: pointer;
 }
 
 /* Menu - Cards*/

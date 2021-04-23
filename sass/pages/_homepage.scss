@@ -126,6 +126,7 @@
 
             &:hover {
                 background-color: lighten( $primary-color, 30%);
+                cursor: pointer;
 
                 :first-child {
                     color: $primary-color;
@@ -246,6 +247,7 @@
             display: inline-block;
             color: $primary-color;
             animation: like 2s both;
+            cursor: pointer;
         }
 
        
