@@ -21,9 +21,9 @@ Ohmyfood is the third project of my Web Developper formation with Openclassrooms
 Github : TheophileCourtois_3_23032021
 
 
-## 💻 Make it works
+## 🌐 Website
 
-After cloning the repository, make sure to run "node server" in the terminal. Then, open index.html in your browser and explore !
+https://theophile646.github.io/TheophileCourtois_3_23032021/
 
 ## :speech_balloon: Author
 
