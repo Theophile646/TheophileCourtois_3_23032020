@@ -1,4 +1,4 @@
-# Ohmyfood
+# :hamburger: Ohmyfood
 
 Ohmyfood is the third project of my Web Developper formation with Openclassrooms. I created the front-end of a mobile first application from the mock-up provided. I added complexe CSS animations
 
